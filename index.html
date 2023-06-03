@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- CSS -->
+  <link href="style/style.css" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="scripts/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <title>Google Translate Demo</title>
+</head>
+
+<body>
+  <h1>My Web Page</h1>
+  <p>Hello everybody!</p>
+  <p>Translate this page:</p>
+
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      setCookie('googtrans', '/en/fr', 1);
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      let expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+  </script>
+
+  <p>You can translate the content of this page by selecting a language in the select box.</p>
+
+  <!-- Scripts -->
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
